@@ -14,7 +14,8 @@ public class SortTest {
 
         System.out.println();
 
-        Arrays.sort(sa);
+//        (sa) -> {return Arrays.sort(sa)};
+//        Arrays.sort(sa);
 
 //        Arrays.stream(sa).forEach(s -> System.out.print(s + " "));
         for(String s : sa)
