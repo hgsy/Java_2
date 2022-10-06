@@ -37,3 +37,4 @@ class Main
         obj.text2();
     }
 }
+    
