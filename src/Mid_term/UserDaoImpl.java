@@ -13,7 +13,7 @@ public class UserDaoImpl implements UserDao {
 
         for(int i=0;i<mUserList.length;i++){
             String mId = mUserList[i].getId();
-            if(mId==id) {
+            if(mId.equals(id)) {
                 temp = mId;
                 break;
             }
@@ -27,9 +27,11 @@ public class UserDaoImpl implements UserDao {
 
         for(int i=0;i<mUserList.length;i++){
             String mPhNum = mUserList[i].getPhNum();
-            if(mPhNum==phNum) {
+            if(mPhNum.equals(phNum)) {
                 temp = mPhNum;
                 break;
+
+
             }
         }
         return temp;
@@ -41,7 +43,7 @@ public class UserDaoImpl implements UserDao {
 
         for(int i=0;i<mUserList.length;i++){
             String mEmail = mUserList[i].getEmail();
-            if(mEmail==email) {
+            if(mEmail.equals(email)) {
                 temp = mEmail;
                 break;
             }
@@ -56,14 +58,21 @@ public class UserDaoImpl implements UserDao {
         for(int i=0;i<mUserList.length;i++){
             String mId = mUserList[i].getId();
             String mPw = mUserList[i].getPw();
-            if(mId!=id){
+
+            if(mId.equals(id)){
+
+                if(mPw.equals(pw)){
+                    temp = 1;
+                    break;
+                }else {
+
+                    break;
+                }
+            }else {
+
                 continue;
             }
 
-            if(mPw==pw){
-                temp = 1;
-                break;
-            }
         }
 
         return temp;

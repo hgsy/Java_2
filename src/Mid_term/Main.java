@@ -12,10 +12,12 @@ public class Main {
         UserUp1 u4 = new UserUp1();
         UserUp1 u5 = new UserUp1();
 
+        //초기 유저들
         UserUp1[] uList = {u1,u2,u3,u4,u5};
 
         UserDaoImpl userD = new UserDaoImpl(uList);
 
+        //초기값 대입
         for(int i=0;i< uList.length;i++){
             String id = "a" + (i+1);
             int num = i+1;
@@ -25,6 +27,24 @@ public class Main {
             uList[i].setPhNum("01" + num);
         }
 
+//        printUsersInfo(uList);
+
+        loginMessage(userD.login("a1","p2"));
+
+    }
+
+    public static void loginMessage(int result){
+        switch (result){
+            case 1:
+                System.out.println("로그인 성공");
+                break;
+
+            default:
+                System.out.println("로그인 실패");
+        }
+    }
+
+    public static void printUsersInfo(UserUp1[] uList){
         for(int i = 0;i < uList.length;i++){
             String id = uList[i].getId();
             String pw = uList[i].getPw();
@@ -41,9 +61,7 @@ public class Main {
                             "=================\n",
                     i, id, pw, email, phnum
             );
-
         }
-
     }
 
 }
