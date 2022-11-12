@@ -1,3 +1,5 @@
+package Kw_work;
+
 import java.util.Scanner;
 class NestStudent {
     //1) 필드 선언
