@@ -51,6 +51,8 @@ public class Point <K extends Number,V extends Number, T extends Number> {
 
     }
 
+
+
     public static Point convertPoint(Point point, String xyz){
         // 공간 - 평면 좌표 변환 메소드 - 특정 축 제거
         if(xyz.equals("x")){
